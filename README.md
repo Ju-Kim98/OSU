@@ -3,7 +3,7 @@ Course works
 
 
 - AI530 Big Ideas in AI
-- AI533 Intellegent Agents & Decision 
+- [AI533] Intellegent Agents & Decision (https://github.com/Ju-Kim98/OSU/tree/main/AI533)
 - AI534 Muchine Learning
 - AI535 Deep Learning
 - AI539 NLP & Deep Learning2
