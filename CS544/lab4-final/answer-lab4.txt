@@ -1,0 +1,32 @@
+answers-lab4
+CS544 6/11/2023
+JuHyunKim
+
+1. Compare kern/mpentry.S side by side with boot/boot.S. Bearing in mind that kern/mpentry.S is compiled and linked to run 
+above KERNBASE just like everything else in the kernel, what is the purpose of macro MPBOOTPHYS? 
+Why is it necessary in kern/mpentry.S but not in boot/boot.S? In other words, what could go wrong if it were omitted in kern/mpentry.S?
+
+=> kern/mpentry.S is linked to run above KERNBASE, its load location is dynamically determined at runtime.
+The purpose of macro MPBOOTPHYS is to translate an address from an offset from mpentry_start to an offset from MPENTRY_PADDR.
+
+
+2. It seems that using the big kernel lock guarantees that only one CPU can run the kernel code at a time. 
+Why do we still need separate kernel stacks for each CPU? Describe a scenario in which using a shared kernel stack will go wrong, 
+even with the protection of the big kernel lock.
+
+=> The use of a big kernel lock, which allows only one CPU to run the kernel code at a time, ensures that the kernel's critical sections 
+are executed atomically and prevents race conditions. 
+However, even with the protection of the big kernel lock, separate kernel stacks for each CPU are necessary.
+Kernel stacks are per-CPU data structures that store temporary data and function call information when the kernel is executing. 
+They are used to manage nested function calls, local variables, and return addresses. Each CPU requires its own kernel stack
+because multiple CPUs can be executing kernel code simultaneously. 
+If a shared kernel stack were used, it would lead to stack corruption stack overflow, and context switching.
+
+
+3. In your implementation of env_run() you should have called lcr3(). Before and after the call to lcr3(), your code makes references (at least it should) to the variable e, the argument to env_run. Upon loading the %cr3 register, the addressing context used by the MMU is instantly changed. But a virtual address (namely e) has meaning relative to a given address context–the address context specifies the physical address to which the virtual address maps. Why can the pointer e be dereferenced both before and after the addressing switch?
+=>Because the variable e is fixed because lcr3() calls do not change the memory location of the kernel stack.
+
+
+4. Whenever the kernel switches from one environment to another, it must ensure the old environment’s registers are saved so they can be restored properly later. Why? Where does this happen?
+=> The previous environment's registers are saved so that it can continue executing later. 
+    trap() function: curenv->env_tf = *tf;
