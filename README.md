@@ -3,10 +3,10 @@ Course works
 
 
 - Big Ideas in AI
-- [Intellegent Agents & Decision ](https://github.com/Ju-Kim98/OSU/tree/main/AI533) Intellegent Agents & Decision 
-- [Muchine Learning](https://github.com/Ju-Kim98/OSU/tree/main/AI534) Muchine Learning
-- [Deep Learning](https://github.com/Ju-Kim98/OSU/tree/main/AI535) Deep Learning
-- NLP & Deep Learning
+- [Intellegent Agents & Decision ](https://github.com/Ju-Kim98/OSU/tree/main/AI533) 
+- [Muchine Learning](https://github.com/Ju-Kim98/OSU/tree/main/AI534) 
+- [Deep Learning](https://github.com/Ju-Kim98/OSU/tree/main/AI535) 
+- [NLP](https://github.com/Ju-Kim98/OSU/tree/main/AI539)
 
 - Error-Correcting Codes
 - [Operating Systems2](https://github.com/Ju-Kim98/OSU/tree/main/CS544) Operating Systems2
