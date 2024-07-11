@@ -8,7 +8,7 @@ Course works
 - [Deep Learning](https://github.com/Ju-Kim98/OSU/tree/main/AI535) Deep Learning
 - NLP & Deep Learning
 
-- CS527 Error-Correcting Codes
+- Error-Correcting Codes
 - [Operating Systems2](https://github.com/Ju-Kim98/OSU/tree/main/CS544) Operating Systems2
 - [Network In Comput Biology](https://github.com/Ju-Kim98/OSU/tree/main/CS546) Network In Comput Biology
 - Computer Graphics
